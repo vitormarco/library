@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import roboto from '@/styles/font';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={roboto.className}>
       <body>{children}</body>
     </html>
   );

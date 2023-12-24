@@ -1,4 +1,4 @@
-const Home = async () => {
+const livros = () => {
   return (
     <main>
       <h1>Hello World!</h1>
@@ -6,4 +6,4 @@ const Home = async () => {
   );
 };
 
-export default Home;
+export default livros;

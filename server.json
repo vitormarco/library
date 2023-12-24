@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "aa290345-4fe7-4872-8496-d5456646fe4c",
+      "name": "Lore Ipsum Admin",
+      "email": "admin@admin.com",
+      "password": "1234",
+      "role": ["admin"]
+    },
+    {
+      "id": "b0400c4a-e830-4430-900e-6752898b41a5",
+      "name": "Lore Ipsum Normal",
+      "email": "user@user.com",
+      "password": "1234",
+      "role": ["user"]
+    }
+  ]
+}

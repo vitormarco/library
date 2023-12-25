@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
-import ErrorMessage from '@/components/shared/ErrorMessage/ErrorMessage';
+import { ErrorMessage } from '@/components/shared/ErrorMessage';
 import { Input } from '@/components/shared/Input';
 import styles from './Input.module.css';
 import { IFormInputProps } from './Input.types';

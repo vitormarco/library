@@ -13,7 +13,7 @@
     "commit": "git add . && git cz && node .husky/gitpush.mjs",
     "test": "jest",
     "test:watch": "jest --watch",
-    "teste:coverage": "jest --coverage",
+    "test:coverage": "jest --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "server": "json-server server.json -p 3333"
@@ -26,6 +26,7 @@
     "polished": "^4.2.2",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.49.2",
     "tailwind-merge": "^2.2.0",
     "tailwind-variants": "^0.1.19"
   },

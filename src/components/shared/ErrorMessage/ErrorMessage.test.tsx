@@ -1,8 +1,8 @@
 import { render, screen } from '@/utils/tests';
 import ErrorMessage from './ErrorMessage';
 
-describe('Input', () => {
-  it('should be able render a Input', () => {
+describe('ErrorMessage', () => {
+  it('should be able render a ErrorMessage', () => {
     render(<ErrorMessage message="Must be valid e-mail." />);
 
     expect(

@@ -8,6 +8,8 @@
   --transparentGray15: hsl(0deg 0% 50% / 0.15);
   --transparentGray35: hsl(0deg 0% 50% / 0.35);
   --red500: hsl(0deg 72.2% 50.6%);
+  --white: hsl(0deg 0% 100%);
+  --black: hsl(0deg 0% 0%);
 }
 
 /* Box sizing rules */
@@ -67,6 +69,13 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */

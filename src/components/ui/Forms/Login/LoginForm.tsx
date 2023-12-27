@@ -47,7 +47,9 @@ const LoginForm = ({ session }: ILoginProps) => {
           <h2 className={styles.title}>Login</h2>
           <FormInput labelText="E-mail" {...methods.register('email')} />
           <FormInput labelText="Senha" type="password" {...methods.register('password')} />
-          <Button type="submit">Entrar</Button>
+          <Button type="submit" loading={methods.formState.isSubmitting}>
+            Entrar
+          </Button>
         </form>
       </Card>
     </FormProvider>

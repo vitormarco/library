@@ -14,13 +14,14 @@ const InputBase: React.ForwardRefRenderFunction<HTMLInputElement, IInputProps> =
       {labelText}
       <input
         className={getInputClasses(hasError, styles)}
-        {...rest}
+        id={rest.name}
         ref={(element) => {
           if (ref) {
             if (typeof ref === 'function') ref(element);
             inputRef.current = element;
           }
         }}
+        {...rest}
       />
     </label>
   );

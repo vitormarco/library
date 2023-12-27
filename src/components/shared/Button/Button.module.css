@@ -24,4 +24,5 @@
   cursor: not-allowed;
   background-color: var(--gray50);
   border: 1px solid var(--gray50);
+  color: var(--black);
 }

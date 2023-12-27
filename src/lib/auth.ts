@@ -19,7 +19,7 @@ const authOptions: NextAuthOptions = {
         );
 
         if (!user || user.password !== password) {
-          return null;
+          throw new Error('User not found.');
         }
 
         return user;
@@ -27,7 +27,9 @@ const authOptions: NextAuthOptions = {
     })
   ],
   pages: {
-    signIn: '/'
+    signIn: '/',
+    signOut: '/',
+    error: '/'
   }
 };
 

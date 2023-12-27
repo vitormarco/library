@@ -8,7 +8,7 @@ import styles from './Input.module.css';
 import { IFormInputProps } from './Input.types';
 
 const FormInputBase: React.ForwardRefRenderFunction<HTMLInputElement, IFormInputProps> = (
-  { labelText, name },
+  { labelText, name, ...rest },
   ref
 ) => {
   const { control } = useFormContext();
@@ -20,7 +20,7 @@ const FormInputBase: React.ForwardRefRenderFunction<HTMLInputElement, IFormInput
       render={({ field, fieldState: { error } }) => {
         return (
           <div className={styles.wrapper}>
-            <Input {...field} labelText={labelText} hasError={!!error} ref={ref} />
+            <Input {...rest} {...field} labelText={labelText} hasError={!!error} ref={ref} />
             <ErrorMessage message={error?.message} />
           </div>
         );

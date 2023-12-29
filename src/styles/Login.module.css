@@ -1,0 +1,13 @@
+.login {
+  margin-top: 80px;
+
+  @media (max-width: 46.875rem) {
+    margin: 0;
+    justify-content: center;
+  }
+}
+
+.login > * {
+  max-width: 500px;
+  margin: 0 auto;
+}

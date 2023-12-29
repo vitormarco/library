@@ -1,0 +1,11 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 280px;
+  min-height: 360px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  padding: 16px;
+  overflow: hidden;
+}

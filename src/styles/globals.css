@@ -1,3 +1,138 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --primary: hsl(240deg 80% 60%);
+  --gray50: hsl(0deg 0% 95%);
+  --gray300: hsl(0deg 0% 75%);
+  --gray500: hsl(0deg 0% 50%);
+  --gray700: hsl(0deg 0% 40%);
+  --black: hsl(0deg 0% 0%);
+  --transparentGray15: hsl(0deg 0% 50% / 0.15);
+  --transparentGray35: hsl(0deg 0% 50% / 0.35);
+  --red500: hsl(0deg 72.2% 50.6%);
+  --white: hsl(0deg 0% 100%);
+  --black: hsl(0deg 0% 0%);
+  --padding-inline: 1rem;
+  --content-max-width: 900px;
+  --breakout-max-width: 1200px;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+main {
+  min-height: 100dvh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr)
+    [breakout-start] minmax(0, var(--breakout-size))
+    [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width))
+    [content-end]
+    minmax(0, var(--breakout-size)) [breakout-end]
+    minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+.container > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.content > .breakout {
+  grid-column: breakout;
+}
+
+.content > .full-width {
+  grid-column: full-width;
+
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+.flex-center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

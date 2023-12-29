@@ -1,8 +1,13 @@
+import MainLayout from '@/components/ui/layout';
+
 const livros = () => {
   return (
-    <main>
-      <h1>Hello World!</h1>
-    </main>
+    <MainLayout>
+      <header></header>
+      <section>
+        <h1>Biblioteca</h1>
+      </section>
+    </MainLayout>
   );
 };
 

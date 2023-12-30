@@ -1,5 +1,5 @@
 import BookList from '@/components/ui/BookList';
-import MainLayout from '@/components/ui/Layout';
+import MainLayout from '@/components/ui/Template';
 
 const livros = async () => {
   return (

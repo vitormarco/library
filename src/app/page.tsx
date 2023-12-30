@@ -1,6 +1,6 @@
 import { getServerSession } from 'next-auth';
 import Login from '@/components/ui/Forms';
-import MainLayout from '@/components/ui/Layout';
+import MainLayout from '@/components/ui/Template';
 import authOptions from '@/lib/auth';
 import styles from '@/styles/Login.module.css';
 

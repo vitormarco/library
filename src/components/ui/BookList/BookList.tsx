@@ -1,19 +1,15 @@
-'use client';
-
 import { FiBook, FiChevronRight } from 'react-icons/fi';
 import Link from '@/components/shared/Link';
 import List from '@/components/shared/List';
-import { useGetBooksQuery } from '@/services/books/books';
 import { slugfy } from '@/utils/formats/url';
 import routes from '@/utils/routes';
 import styles from './BookList.module.css';
+import { IBookListProps } from './BookList.types';
 
-const BookList = () => {
-  const { data } = useGetBooksQuery({});
-
+const BookList = ({ books }: IBookListProps) => {
   return (
     <List className={styles.list}>
-      {data?.results.map((book) => (
+      {books?.map((book) => (
         <List.Item className={styles['list-item']} key={book.id}>
           <Link
             className={styles.link}

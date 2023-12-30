@@ -1,13 +1,11 @@
-import BookList from '@/components/ui/BookList';
+import Library from '@/components/ui/Layout/Library';
 import MainLayout from '@/components/ui/Template';
 
 const livros = async () => {
   return (
     <MainLayout>
-      <section>
-        <h1>Biblioteca</h1>
-        <BookList />
-      </section>
+      <h1>Biblioteca</h1>
+      <Library />
     </MainLayout>
   );
 };

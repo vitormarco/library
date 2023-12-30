@@ -8,7 +8,7 @@ import Pagination from '@/components/shared/Pagination';
 import VisuallyHidden from '@/components/shared/VisuallyHidden';
 import BookList from '@/components/ui/BookList';
 import { useDebounce } from '@/hooks/useDebounce';
-import { useGetBooksQuery } from '@/services/books/books';
+import { useCreateBookMutation, useGetBooksQuery } from '@/services/books/books';
 import styles from './Library.module.css';
 
 const Library = () => {
@@ -20,6 +20,8 @@ const Library = () => {
     page,
     name: searchQuery
   });
+
+  const [createBook] = useCreateBookMutation();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPage(1);
@@ -38,7 +40,16 @@ const Library = () => {
               onChange={handleSearch}
               placeholder="Buscar livro por titulo"
             />
-            <Button>
+            <Button
+              onClick={() => {
+                createBook({
+                  title: 'MEU LIVRO',
+                  description: 'TESTE',
+                  isAvailable: true,
+                  created_at: new Date()
+                });
+              }}
+            >
               <VisuallyHidden>Addicionar livro</VisuallyHidden>
               <span>
                 <FiPlus />

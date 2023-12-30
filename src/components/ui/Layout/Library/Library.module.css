@@ -11,3 +11,24 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+}
+
+.header > label {
+  max-width: 260px;
+  gap: 0;
+}
+
+.header > button {
+  max-width: fit-content;
+}
+
+.header > button > span {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}

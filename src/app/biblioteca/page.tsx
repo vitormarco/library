@@ -4,7 +4,6 @@ import MainLayout from '@/components/ui/Template';
 const livros = async () => {
   return (
     <MainLayout>
-      <h1>Biblioteca</h1>
       <Library />
     </MainLayout>
   );

@@ -6,6 +6,7 @@ import { BookTypes } from './books.types';
 interface IGetBooksDTO {
   page?: number;
   limit?: number;
+  name?: string;
 }
 
 export const booksApi = createApi({
@@ -13,12 +14,13 @@ export const booksApi = createApi({
   baseQuery: axiosBaseQuery(),
   endpoints: (builder) => ({
     getBooks: builder.query<{ results: BookTypes[]; total: number }, IGetBooksDTO>({
-      query: ({ page = 1, limit = 12 }) => ({
+      query: ({ page = 1, limit = 12, name }) => ({
         method: 'get',
         url: 'library',
         params: {
           _page: page,
-          _limit: limit
+          _limit: limit,
+          title_like: name
         }
       }),
       transformResponse: (response: BookTypes[], meta: { headers: AxiosHeaders }) => {

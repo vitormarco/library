@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import StoreProvider from '@/providers/StoreProvider';
 import roboto from '@/styles/font';
 import '@/styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,7 +12,9 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={roboto.className}>
-      <body>{children}</body>
+      <body>
+        <StoreProvider>{children}</StoreProvider>
+      </body>
     </html>
   );
 }

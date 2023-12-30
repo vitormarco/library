@@ -1,11 +1,12 @@
-import MainLayout from '@/components/ui/layout';
+import BookList from '@/components/ui/BookList';
+import MainLayout from '@/components/ui/Layout';
 
-const livros = () => {
+const livros = async () => {
   return (
     <MainLayout>
-      <header></header>
       <section>
         <h1>Biblioteca</h1>
+        <BookList />
       </section>
     </MainLayout>
   );

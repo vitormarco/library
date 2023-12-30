@@ -1,7 +1,19 @@
-import { NextAuthOptions } from 'next-auth';
+import { NextAuthOptions, DefaultSession, DefaultUser } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { getUserByEmail } from '@/services/getUsers';
 import CredentialTypes from '@/types/api/credentials.types';
+
+declare module 'next-auth' {
+  interface Session extends DefaultSession {
+    user: DefaultSession['user'] & {
+      id: string;
+      role: Array<string>;
+    };
+  }
+  interface User extends DefaultUser {
+    role: Array<string>;
+  }
+}
 
 const authOptions: NextAuthOptions = {
   session: {
@@ -26,6 +38,23 @@ const authOptions: NextAuthOptions = {
       }
     })
   ],
+
+  callbacks: {
+    jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.role = user.role;
+      }
+
+      return token;
+    },
+    session({ session, token }) {
+      session.user.id = token.id as string;
+      session.user.role = token.role as Array<string>;
+
+      return session;
+    }
+  },
   pages: {
     signIn: '/',
     signOut: '/',

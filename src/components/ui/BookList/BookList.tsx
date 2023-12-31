@@ -2,6 +2,7 @@ import { FiBook, FiChevronRight } from 'react-icons/fi';
 import Link from '@/components/shared/Link';
 import List from '@/components/shared/List';
 import Loading from '@/components/shared/Loading';
+import Tag from '@/components/shared/Tag';
 import { slugfy } from '@/utils/formats/url';
 import routes from '@/utils/routes';
 import styles from './BookList.module.css';
@@ -38,6 +39,20 @@ const BookList = ({
                 <FiBook size={16} />
               </div>
               {book.title}
+              {!book.isAvailable && (
+                <Tag
+                  style={
+                    {
+                      '--border-color': 'var(--red500)',
+                      '--background': 'var(--red500)',
+                      '--color': 'var(--white)',
+                      fontWeight: 'bold'
+                    } as React.CSSProperties
+                  }
+                >
+                  Indisponível
+                </Tag>
+              )}
             </span>
             <div className={styles.wrapper}>
               <FiChevronRight size={16} />

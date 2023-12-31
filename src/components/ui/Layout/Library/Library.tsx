@@ -79,6 +79,7 @@ const Library = () => {
               created_at: new Date()
             });
             handleClose();
+            setPage(1);
           }}
         >
           Create Book

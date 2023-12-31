@@ -34,7 +34,7 @@ export const booksApi = createApi({
       },
       providesTags: ['Books']
     }),
-    createBook: builder.mutation({
+    createBook: builder.mutation<BookTypes, BookTypes>({
       query: (data) => ({
         method: 'post',
         url: 'library',

@@ -24,6 +24,7 @@ const BookList = ({
   if (isError) {
     return <span>Ocorreu um error.</span>;
   }
+
   return (
     <List className={styles.list}>
       {books?.map((book) => (

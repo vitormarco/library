@@ -1,0 +1,9 @@
+.close-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  background-color: none;
+  position: relative;
+}

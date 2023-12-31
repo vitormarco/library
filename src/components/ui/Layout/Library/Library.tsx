@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { FiPlus } from 'react-icons/fi';
+import dynamic from 'next/dynamic';
 import { v4 as uuidV4 } from 'uuid';
 import Button from '@/components/shared/Button';
-import Drawer from '@/components/shared/Drawer';
 import { Input } from '@/components/shared/Input';
 import Pagination from '@/components/shared/Pagination';
 import VisuallyHidden from '@/components/shared/VisuallyHidden';
@@ -13,6 +13,7 @@ import { useDebounce } from '@/hooks/useDebounce';
 import useModal from '@/hooks/useModal';
 import { useCreateBookMutation, useGetBooksQuery } from '@/services/books/books';
 import styles from './Library.module.css';
+const DynamicDrawer = dynamic(() => import('@/components/shared/Drawer'), { ssr: false });
 
 const Library = () => {
   const [page, setPage] = useState(1);
@@ -67,7 +68,7 @@ const Library = () => {
         />
       </section>
 
-      <Drawer isOpen={isOpen} onClose={handleClose}>
+      <DynamicDrawer isOpen={isOpen} onClose={handleClose}>
         <Button
           onClick={() => {
             createBook({
@@ -84,7 +85,7 @@ const Library = () => {
         >
           Create Book
         </Button>
-      </Drawer>
+      </DynamicDrawer>
     </>
   );
 };

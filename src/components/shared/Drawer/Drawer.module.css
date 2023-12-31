@@ -27,6 +27,10 @@
   display: flex;
   flex-direction: column;
   overflow: hidden auto;
+
+  @media (max-width: 56.25rem) {
+    padding: 24px 48px;
+  }
 }
 
 .header {

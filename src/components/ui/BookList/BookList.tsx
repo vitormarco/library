@@ -18,12 +18,12 @@ const BookList = ({
     return <Loading />;
   }
 
-  if (!books || !books.length) {
-    return <span>Nenhum livro encontrado</span>;
-  }
-
   if (isError) {
     return <span>Ocorreu um error.</span>;
+  }
+
+  if (!books || !books.length) {
+    return <span>Nenhum livro encontrado</span>;
   }
 
   return (

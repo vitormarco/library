@@ -22,7 +22,7 @@ export const booksApi = createApi({
           _page: page,
           _limit: limit,
           title_like: name,
-          _sort: 'created_at',
+          _sort: 'updated_at',
           _order: 'desc'
         }
       }),

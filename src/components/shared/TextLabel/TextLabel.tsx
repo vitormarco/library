@@ -1,4 +1,4 @@
-import VisuallyHidden from '../../VisuallyHidden';
+import VisuallyHidden from '../VisuallyHidden';
 import styles from './TextLabel.module.css';
 import { ITextLabelProps } from './TextLabel.types';
 

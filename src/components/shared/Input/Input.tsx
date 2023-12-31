@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
+import TextLabel from '../TextLabel';
 import { getInputClasses } from './Input.helpers';
 import styles from './Input.module.css';
 import { IInputProps } from './Input.types';
-import TextLabel from './TextLabel';
 
 const InputBase: React.ForwardRefRenderFunction<HTMLInputElement, IInputProps> = (
   { labelText, hasError = false, visuallyHidden = false, ...rest },

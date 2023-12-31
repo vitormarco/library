@@ -4,4 +4,5 @@ export type BookTypes = {
   description: string;
   isAvailable: boolean;
   created_at: Date;
+  updated_at: Date;
 };

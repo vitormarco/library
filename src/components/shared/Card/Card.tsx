@@ -3,7 +3,7 @@ import { ICardProps } from './Card.types';
 
 const Card = ({ children, className = '', style }: ICardProps) => {
   return (
-    <article style={style} className={[styles.card, className].join(' ')}>
+    <article data-testid="card" style={style} className={[styles.card, className].join(' ')}>
       {children}
     </article>
   );

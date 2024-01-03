@@ -9,12 +9,11 @@ import Card from '@/components/shared/Card';
 import { FormInput } from '@/components/ui/FormFields';
 import routes from '@/utils/routes';
 import { zodResolver } from '@hookform/resolvers/zod';
-import useOnlyRenderPageIsNotAuthenticated from './Login.hooks';
 import styles from './Login.module.css';
 import LoginFormSchema from './Login.schemas';
-import { ILoginProps, LoginInputTypes } from './Login.types';
+import { LoginInputTypes } from './Login.types';
 
-const LoginForm = ({ session }: ILoginProps) => {
+const LoginForm = () => {
   const router = useRouter();
   const methods = useForm({
     resolver: zodResolver(LoginFormSchema),
@@ -24,7 +23,6 @@ const LoginForm = ({ session }: ILoginProps) => {
       password: ''
     }
   });
-  useOnlyRenderPageIsNotAuthenticated({ session });
 
   const onSubmit: SubmitHandler<LoginInputTypes> = async (data) => {
     const res = await signIn('credentials', {

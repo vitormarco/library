@@ -9,3 +9,9 @@ export const generateParagraph = (text: string) => {
     .join('')
     .replaceAll('<p></p>', '');
 };
+
+export const generateForEdit = (text: string) => {
+  const sanitized = sanitize(text);
+
+  return sanitized.replaceAll('<p>', '').replaceAll('</p>', '\n');
+};

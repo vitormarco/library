@@ -7,7 +7,12 @@ const CloseButton = ({ children, onClose }: ICloseButtonProps) => {
   const { handleCloseByKey } = useAccessibilityAction(onClose);
 
   return (
-    <button onClick={onClose} onKeyDown={handleCloseByKey} className={styles['close-button']}>
+    <button
+      onClick={onClose}
+      onKeyDown={handleCloseByKey}
+      className={styles['close-button']}
+      data-testid="close-button"
+    >
       <FiX />
       {children}
     </button>

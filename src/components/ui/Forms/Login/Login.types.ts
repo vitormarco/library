@@ -5,10 +5,6 @@ export type LoginInputTypes = {
   password: string;
 };
 
-export interface ILoginProps {
-  session?: Session | null;
-}
-
 export interface IUseOnlyRenderPageIsNotAuthenticatedProps {
   session?: Session | null;
 }

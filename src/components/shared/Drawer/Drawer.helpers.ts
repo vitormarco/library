@@ -40,3 +40,11 @@ export const handleClickOutside =
 
     return onClose();
   };
+
+export const preventBodyScroll = () => {
+  document.body.style.overflowY = 'hidden';
+};
+
+export const allowBodyScroll = () => {
+  document.body.style.overflowY = 'unset';
+};

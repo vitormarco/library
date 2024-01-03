@@ -1,9 +1,20 @@
-const BookDetail = ({ params }: { params: { slug: string } }) => {
+import { redirect } from 'next/navigation';
+import BookDetail from '@/components/ui/Layout/BookDetail';
+import MainLayout from '@/components/ui/Template';
+import routes from '@/utils/routes';
+
+const BookPage = ({ params }: { params: { slug: string } }) => {
+  const id = params.slug.split('cod-').pop();
+
+  if (!id) {
+    redirect(routes.library);
+  }
+
   return (
-    <main>
-      <h1>{params.slug}</h1>
-    </main>
+    <MainLayout>
+      <BookDetail id={id} />
+    </MainLayout>
   );
 };
 
-export default BookDetail;
+export default BookPage;

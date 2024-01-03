@@ -22,8 +22,8 @@ export const booksApi = createApi({
           _page: page,
           _limit: limit,
           title_like: name,
-          _sort: 'updated_at',
-          _order: 'desc'
+          _sort: 'isAvailable,updated_at,',
+          _order: 'desc,desc'
         }
       }),
       transformResponse: (response: BookTypes[], meta: { headers: AxiosHeaders }) => {
@@ -41,8 +41,40 @@ export const booksApi = createApi({
         data
       }),
       invalidatesTags: ['Books']
+    }),
+    getBook: builder.query<BookTypes, { id: string }>({
+      query: ({ id }) => ({
+        method: 'get',
+        url: `library/${id}`
+      }),
+      providesTags: (result, error, { id }) => [{ type: 'Books', id }]
+    }),
+    updateBook: builder.mutation<BookTypes, Partial<BookTypes>>({
+      query: (data) => {
+        const { id, ...body } = data;
+
+        return {
+          url: `library/${id}`,
+          method: 'put',
+          data: body
+        };
+      },
+      invalidatesTags: (result, error, { id }) => [{ type: 'Books', id }, 'Books']
+    }),
+    deleteBook: builder.mutation<BookTypes, Partial<BookTypes>>({
+      query: (data) => ({
+        url: `library/${data.id}`,
+        method: 'delete'
+      }),
+      invalidatesTags: (result, error, { id }) => ['Books', { type: 'Books', id }]
     })
   })
 });
 
-export const { useGetBooksQuery, useCreateBookMutation } = booksApi;
+export const {
+  useGetBooksQuery,
+  useCreateBookMutation,
+  useGetBookQuery,
+  useUpdateBookMutation,
+  useDeleteBookMutation
+} = booksApi;

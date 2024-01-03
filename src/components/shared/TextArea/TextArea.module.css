@@ -1,0 +1,23 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.text-area {
+  border: 1px solid var(--gray500);
+  border-radius: 4px;
+  min-height: 140px;
+  resize: none;
+  transition: border-color 0.2s ease-in-out;
+  font-size: 1rem;
+}
+
+.error {
+  border: 2px solid var(--red500);
+}
+
+.text-area:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}

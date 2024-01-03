@@ -1,0 +1,39 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--gray300);
+  border-radius: 8px;
+}
+
+.book-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: inherit;
+  text-decoration: none;
+  padding: 8px;
+  transition: opacity 250ms;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}

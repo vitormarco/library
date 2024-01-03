@@ -1,17 +1,18 @@
 import React, { useRef } from 'react';
+import TextLabel from '../TextLabel';
 import { getInputClasses } from './Input.helpers';
 import styles from './Input.module.css';
 import { IInputProps } from './Input.types';
 
 const InputBase: React.ForwardRefRenderFunction<HTMLInputElement, IInputProps> = (
-  { labelText, hasError = false, ...rest },
+  { labelText, hasError = false, visuallyHidden = false, ...rest },
   ref
 ) => {
   const inputRef = useRef<HTMLInputElement | null>();
 
   return (
     <label className={styles.wrapper} htmlFor={rest.name}>
-      {labelText}
+      <TextLabel visuallyHidden={visuallyHidden}>{labelText}</TextLabel>
       <input
         className={getInputClasses(hasError, styles)}
         id={rest.name}

@@ -35,10 +35,10 @@ const Button = ({
 }: IButtonProps) => {
   const variantStyles = STYLES[variant];
   const styles = {
-    ...style,
     '--background': variantStyles.background,
     '--color': variantStyles.color,
-    '--border': variantStyles.border
+    '--border': variantStyles.border,
+    ...style
   } as React.CSSProperties;
 
   if (loading) {

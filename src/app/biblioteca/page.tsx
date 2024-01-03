@@ -1,8 +1,11 @@
-const livros = () => {
+import Library from '@/components/ui/Layout/Library';
+import MainLayout from '@/components/ui/Template';
+
+const livros = async () => {
   return (
-    <main>
-      <h1>Hello World!</h1>
-    </main>
+    <MainLayout>
+      <Library />
+    </MainLayout>
   );
 };
 

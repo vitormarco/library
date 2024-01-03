@@ -1,0 +1,11 @@
+.delete {
+  margin-inline: 4px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.delete button {
+  margin-top: auto;
+}
